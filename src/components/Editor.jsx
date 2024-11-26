@@ -10,6 +10,21 @@ import ListItem from '@tiptap/extension-list-item';
 import MenuBar from './MenuBar';
 import Highlight from '@tiptap/extension-highlight';
 import CodeBlock from '@tiptap/extension-code-block';
+import Table from '@tiptap/extension-table';
+import TableRow from '@tiptap/extension-table-row';
+import TableCell from '@tiptap/extension-table-cell';
+import TableHeader from '@tiptap/extension-table-header';
+
+const CustomTableCell = TableCell.extend({
+  addAttributes() {
+    return {
+      ...this.parent?.(),
+      class: {
+        default: 'my-custom-cell',
+      },
+    };
+  },
+});
 
 
   const Editor = () => {
@@ -37,6 +52,12 @@ import CodeBlock from '@tiptap/extension-code-block';
             CodeBlock.configure({
               languageClassPrefix: 'language-',
             }),
+            Table.configure({
+              resizable: true,
+            }),
+            TableRow,
+            CustomTableCell,
+            TableHeader,
         ],
         content,
         onUpdate: ({

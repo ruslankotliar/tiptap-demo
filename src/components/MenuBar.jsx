@@ -5,6 +5,26 @@ const MenuBar = ({ editor }) => {
   
     return (
       <div className="menu-bar">
+        {/* insert a table */}
+        <button
+            onClick={() => editor.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow: true }).run()}
+        >
+            Insert Table
+        </button>
+        {/* undo button */}
+        <button
+            onClick={() => editor.chain().focus().undo().run()}
+            disabled={!editor.can().undo()}
+        >
+            Undo
+        </button>
+        {/* redo button */}
+        <button
+            onClick={() => editor.chain().focus().redo().run()}
+            disabled={!editor.can().redo()}
+        >
+            Redo
+        </button>
         {/* highlight text button */}
         <button
             onClick={() => editor.chain().focus().toggleHighlight().run()}

@@ -19,4 +19,19 @@ p.is-editor-empty:first-child::before {
   pointer-events: none;
 }
 
+.my-custom-cell {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+thead th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
