@@ -5,6 +5,13 @@ const MenuBar = ({ editor }) => {
   
     return (
       <div className="menu-bar">
+        {/* toggle custom highlith */}
+        <button
+          onClick={() => editor.commands.toggleHighlight('red')}
+          className={editor.isActive('customHighlight') ? 'is-active' : ''}
+        >
+          Custom Highlight
+        </button>
         <button
           onClick={() => editor.commands.insertButton('Heyo digga!')}
         >
@@ -31,12 +38,6 @@ const MenuBar = ({ editor }) => {
             Redo
         </button>
         {/* highlight text button */}
-        <button
-            onClick={() => editor.chain().focus().toggleHighlight().run()}
-            className={editor.isActive('highlight') ? 'is-active' : ''}
-            >
-            Highlight
-        </button>
         <button
             onClick={() => editor.chain().focus().toggleCodeBlock().run()}
             className={editor.isActive('codeBlock') ? 'is-active' : ''}

@@ -15,6 +15,7 @@ import TableRow from '@tiptap/extension-table-row';
 import TableHeader from '@tiptap/extension-table-header';
 import CustomTableCell from '../extensions/nodes/CustomTableCell';
 import ButtonNode from '../extensions/nodes/ButtonNode';
+import CustomHighlightMark from '../extensions/marks/CustomHighlightMark';
 
 
   const Editor = () => {
@@ -48,7 +49,8 @@ import ButtonNode from '../extensions/nodes/ButtonNode';
             TableRow,
             CustomTableCell,
             TableHeader,
-            ButtonNode
+            ButtonNode,
+            CustomHighlightMark
         ],
         content,
         onUpdate: ({
