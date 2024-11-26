@@ -12,19 +12,9 @@ import Highlight from '@tiptap/extension-highlight';
 import CodeBlock from '@tiptap/extension-code-block';
 import Table from '@tiptap/extension-table';
 import TableRow from '@tiptap/extension-table-row';
-import TableCell from '@tiptap/extension-table-cell';
 import TableHeader from '@tiptap/extension-table-header';
-
-const CustomTableCell = TableCell.extend({
-  addAttributes() {
-    return {
-      ...this.parent?.(),
-      class: {
-        default: 'my-custom-cell',
-      },
-    };
-  },
-});
+import CustomTableCell from '../extensions/nodes/CustomTableCell';
+import ButtonNode from '../extensions/nodes/ButtonNode';
 
 
   const Editor = () => {
@@ -58,6 +48,7 @@ const CustomTableCell = TableCell.extend({
             TableRow,
             CustomTableCell,
             TableHeader,
+            ButtonNode
         ],
         content,
         onUpdate: ({

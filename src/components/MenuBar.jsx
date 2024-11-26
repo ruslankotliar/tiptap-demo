@@ -5,6 +5,11 @@ const MenuBar = ({ editor }) => {
   
     return (
       <div className="menu-bar">
+        <button
+          onClick={() => editor.commands.insertButton('Heyo digga!')}
+        >
+          Insert Button
+        </button>
         {/* insert a table */}
         <button
             onClick={() => editor.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow: true }).run()}
