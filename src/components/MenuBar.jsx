@@ -5,6 +5,18 @@ const MenuBar = ({ editor }) => {
   
     return (
       <div className="menu-bar">
+         <button
+          onClick={() => {
+            if (!editor) return;
+
+            console.log('Toggle Blockquote Button Clicked');
+            editor.commands.toggleCustomBlockquote();
+          }}
+          className={editor?.isActive('customBlockquote') ? 'is-active' : ''}
+        >
+          Toggle Blockquote
+        </button>
+
         {/* toggle custom highlith */}
         <button
           onClick={() => editor.commands.toggleHighlight('red')}
